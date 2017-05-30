@@ -1,0 +1,44 @@
+AppBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        author:
+            type: string
+            length: 255
+        parutionDate:
+            type: datetime
+        content:
+            type: text
+        parution:
+            type: boolean
+
+    oneToMany:
+        comments:
+            targetEntity: Comment
+            mappedBy: post
+
+    manyToMany:
+        categories:
+            targetEntity: Category
+            inversedBy: posts
+            cascade: [ persist ]
+            joinTable:
+                name: posts_categories
+                joinColumns:
+                    post_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    post_category_id:
+                        referencedColumnName: id
+
+    lifecycleCallbacks: {  }

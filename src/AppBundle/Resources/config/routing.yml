@@ -2,3 +2,11 @@ app_category:
     resource: "@AppBundle/Resources/config/routing/category.yml"
     prefix:   /category
 
+app_post:
+    resource: "@AppBundle/Resources/config/routing/post.yml"
+    prefix:   /post
+
+app_comment:
+    resource: "@AppBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+

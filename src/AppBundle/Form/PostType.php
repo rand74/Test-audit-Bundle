@@ -13,7 +13,15 @@ class PostType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('author')->add('parutionDate')->add('content')->add('parution')->add('categories');
+        $builder
+            ->add('title')
+            ->add('author')
+            ->add('parutionDate')
+            ->add('content', null, array(
+                'required' => false
+            ))
+            ->add('parution')
+            ->add('categories');
     }
     
     /**

@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comment
 {
+    public function __toString()
+    {
+        return $this->author;
+    }
+
     /**
      * @var int
      */

@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+    public function __toString()
+    {
+        return $this->title;
+    }
+
     /**
      * @var int
      */
